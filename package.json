@@ -2,7 +2,9 @@
     "name": "@bythope/root",
     "scripts": {},
     "workspaces": [
-        "./cli"
+        "./utils",
+        "./cli",
+        "./phaser-plus"
     ],
     "repository": {
         "type": "git",
@@ -17,8 +19,21 @@
     },
     "homepage": "https://github.com/bythope/bythope#readme",
     "devDependencies": {
+        "@babel/cli": "^7.16.0",
+        "@babel/core": "^7.16.5",
+        "@babel/eslint-parser": "^7.16.5",
+        "@babel/node": "^7.16.5",
+        "@babel/plugin-proposal-class-properties": "^7.16.5",
+        "@babel/preset-env": "^7.16.5",
+        "@babel/preset-react": "^7.16.5",
+        "chai": "^4.3.4",
         "commander": "8.3.0",
+        "concurrently": "^6.4.0",
+        "eslint": "^8.4.1",
+        "jest": "^27.4.5",
+        "nodemon": "^2.0.15",
         "parcel": "^2.0.1",
-        "semver": "7.3.5"
+        "semver": "7.3.5",
+        "typescript": "^4.5.4"
     }
 }

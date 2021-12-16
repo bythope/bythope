@@ -1,21 +1,20 @@
 {
-    "name": "@bythope/utils",
-    "version": "1.1.0",
-    "description": "Shared library used in bythope sub-projects",
-    "types": "lib/utils.d.ts",
-    "author": {
-        "name": "Daniel Kalevski"
-    },
+    "name": "@bythope/phaser-plus",
+    "version": "1.0.27",
+    "description": "Phaser 3 extension",
+    "types": "lib/phaserplus.d.ts",
+    "main": "lib/phaserplus.js",
     "homepage": "https://bythope.com/",
-    "license": "MIT",
-    "main": "lib/utils.js",
     "scripts": {
         "dev": "nodemon -e js -w src --exec 'npm run build'",
         "build": "npm run build:src && npm run build:tsd",
-        "test": "echo 'run test scripts'",
-        "build:tsd": "tsc -d --allowJs --types @rivalis/utils --emitDeclarationOnly --target es5 --lib ES2015 --outDir ./lib src/*.js",
+        "build:tsd": "tsc -d --allowJs --types @bythope/utils,phaser --emitDeclarationOnly --target es5 --lib ES2015 --outDir ./lib src/*.js",
         "build:src": "babel --config-file ./.babelrc src --out-dir lib"
     },
+    "author": {
+        "name": "Daniel Kalevski"
+    },
+    "license": "MIT",
     "directories": {
         "lib": "lib"
     },
@@ -34,6 +33,9 @@
         "url": "https://github.com/bythope/bythope/issues"
     },
     "dependencies": {
-        "@rivalis/utils": "^1.7.4"
+        "@bythope/utils": "^1.1.0"
+    },
+    "peerDependencies": {
+        "phaser": "3.x"
     }
 }
