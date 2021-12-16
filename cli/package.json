@@ -1,6 +1,6 @@
 {
     "name": "@bythope/cli",
-    "version": "1.1.0",
+    "version": "1.1.2",
     "description": "BytHope command-line interface",
     "author": {
         "name": "Daniel Kalevski"
