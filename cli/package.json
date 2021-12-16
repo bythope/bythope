@@ -1,0 +1,45 @@
+{
+    "name": "@bythope/cli",
+    "version": "1.1.0",
+    "description": "BytHope command-line interface",
+    "author": {
+        "name": "Daniel Kalevski"
+    },
+    "homepage": "https://bythope.com/",
+    "license": "MIT",
+    "bin": {
+        "rivalis": "bin/cli.js"
+    },
+    "scripts": {
+        "build": "parcel build --no-cache --log-level=verbose --no-scope-hoist --target cli"
+    },
+    "targets": {
+        "cli": {
+            "source": "src/cli.js",
+            "distDir": "./bin",
+            "engines": {
+                "node": ">= 12"
+            },
+            "includeNodeModules": true,
+            "sourceMap": false
+        }
+    },
+    "directories": {
+        "lib": "lib",
+        "bin": "bin"
+    },
+    "files": [
+        "lib"
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bythope/bythope.git"
+    },
+    "bugs": {
+        "url": "https://github.com/bythope/bythope/issues"
+    }
+}

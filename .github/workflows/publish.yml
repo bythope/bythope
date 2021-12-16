@@ -1,0 +1,23 @@
+name: publish
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm install -g @rivalis/cli
+      - run: rivalis -v
+      - run: npm test --workspaces
+      - run: npm run build --workspaces
+      - run: rivalis npm publish -t latest
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
