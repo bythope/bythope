@@ -8,7 +8,7 @@
     "scripts": {
         "dev": "nodemon -e js -w src --exec 'npm run build'",
         "build": "npm run build:src && npm run build:tsd",
-        "build:tsd": "tsc -d --allowJs --types @bythope/utils,phaser --emitDeclarationOnly --target es5 --lib ES2015 --outDir ./lib src/*.js",
+        "build:tsd": "tsc -d --allowJs --types @bythope/utils,phaser --emitDeclarationOnly --target es5 --lib ES2015,DOM,ScriptHost --outDir ./lib src/*.js",
         "build:src": "babel --config-file ./.babelrc src --out-dir lib"
     },
     "author": {
