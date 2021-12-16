@@ -33,7 +33,7 @@
         "url": "https://github.com/bythope/bythope/issues"
     },
     "dependencies": {
-        "@bythope/utils": "^1.0.0"
+        "@bythope/utils": "^1.1.0"
     },
     "peerDependencies": {
         "phaser": "3.x"
