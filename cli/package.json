@@ -11,7 +11,8 @@
         "rivalis": "bin/cli.js"
     },
     "scripts": {
-        "build": "parcel build --no-cache --log-level=verbose --no-scope-hoist --target cli"
+        "build": "parcel build --no-cache --log-level=verbose --no-scope-hoist --target cli",
+        "test": "echo 'run tests'"
     },
     "targets": {
         "cli": {
