@@ -3,10 +3,10 @@ import Component from '../ecs/Component'
 import Engine from '../ecs/Engine'
 import Entity from '../ecs/Entity'
 import System from '../ecs/System'
-import Logger from './Logger'
+import { Logger } from '@bythope/utils'
 import ModuleRegister from './ModuleRegister'
 import ServiceRegister from './ServiceRegister'
-import formatByteSize from '../utils/formatByteSize'
+import { formatByteSize } from '@bythope/utils'
 
 class Scene extends PhaserScene {
 

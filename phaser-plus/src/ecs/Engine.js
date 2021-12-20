@@ -1,6 +1,6 @@
 import { createWorld, IWorld, deleteWorld, addEntity, setDefaultSize, pipe, removeEntity } from 'bitecs'
 import { GameObjects } from 'phaser'
-import Logger from '../core/Logger'
+import { Logger } from '@bythope/utils'
 import Scene from '../core/Scene'
 import Component from './Component'
 import Entity from './Entity'

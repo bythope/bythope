@@ -1,5 +1,5 @@
 import { Events, Game, GameObjects } from 'phaser'
-import Logger from './Logger'
+import { Logger } from '@bythope/utils'
 import Scene from './Scene'
 
 class Module extends GameObjects.Container {

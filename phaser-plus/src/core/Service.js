@@ -1,5 +1,5 @@
 import { Game } from 'phaser'
-import Logger from './Logger'
+import { Logger } from '@bythope/utils'
 
 class Service {
 
