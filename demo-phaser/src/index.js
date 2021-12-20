@@ -1,10 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {  } from '@bythope/phaser-plus'
+import { Game } from 'phaser'
+import ReactScene from './ReactScene'
 
-ReactDOM.render(
-    <React.StrictMode>
-       <>TEST</>
-    </React.StrictMode>,
-    document.getElementById('root')
-)
+import '../../node_modules/@bythope/phaser-plus/lib/bundle.css'
+
+const game = new Game({
+    parent: 'root',
+    dom: {
+        createContainer: true
+    }
+})
+
+game.scene.add('test', new ReactScene())
+
+game.scene.start('test')

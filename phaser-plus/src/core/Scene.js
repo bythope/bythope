@@ -1,19 +1,10 @@
-import { GameObjects, Loader, Scene as PhaserScene } from 'phaser'
-import Component from '../ecs/Component'
-import Engine from '../ecs/Engine'
-import Entity from '../ecs/Entity'
-import System from '../ecs/System'
+import { Loader, Scene as PhaserScene } from 'phaser'
 import { Logger } from '@bythope/utils'
 import ModuleRegister from './ModuleRegister'
 import ServiceRegister from './ServiceRegister'
 import { formatByteSize } from '@bythope/utils'
 
 class Scene extends PhaserScene {
-
-    /**
-     * @type {number}
-     */
-    maxEntity = 100
 
     stats = {
         assets: {
@@ -34,18 +25,12 @@ class Scene extends PhaserScene {
     services = null
 
     /**
-     * @private
-     * @type {Engine}
-     */
-    engine = null
-
-    /**
      * @type {Logger}
      */
     logger = null
 
     /** @protected */
-    onCreate() {}
+    onInit() {}
 
     /** @protected */
     onLoad() {}
@@ -70,42 +55,6 @@ class Scene extends PhaserScene {
         this.game.scene.start(key)
     }
 
-    /**
-     * 
-     * @param {GameObjects.GameObject} gameObject 
-     * @returns {Entity}
-     */
-    createEntity(gameObject = null) {
-        return this.engine.createEntity(gameObject)
-    }
-
-    /**
-     * 
-     * @param  {...Entity} entities 
-     * @returns {void}
-     */
-    removeEntity(...entities) {
-        return this.engine.removeEntity(...entities)
-    }
-
-    /**
-     * 
-     * @param  {...Component} components 
-     * @returns {void}
-     */
-    defineComponent(...components) {
-        return this.engine.define(...components)
-    }
-
-    /**
-     * 
-     * @param {System} system 
-     * @returns {void}
-     */
-    addSystem(system) {
-        return this.engine.addSystem(system)
-    }
-
 
     /**
      * @private
@@ -122,8 +71,7 @@ class Scene extends PhaserScene {
         this.services = this.game.services
         
         this.logger.info('Initialized!')
-        this.engine = new Engine(this)
-        this.onCreate()
+        this.onInit()
     }
 
     /**
@@ -170,7 +118,6 @@ class Scene extends PhaserScene {
             this.modules.get(key).init()
         }
         this.logger.info(`Loaded modules: [${this.modules.keys.join(', ')}]`)
-        this.engine.run()
         this.onStart()
         this.logger.info('scene started')
     }
@@ -179,7 +126,6 @@ class Scene extends PhaserScene {
      * @private
      */
     update() {
-        this.engine.update()
     }
 
     /**
@@ -190,7 +136,6 @@ class Scene extends PhaserScene {
         for (let key of this.modules.keys) {
             this.modules.get(key).dispose()
         }
-        this.engine.dispose()
         this.modules.destroyAll()
         this.logger.info('All modules disposed')
         this.onDispose()

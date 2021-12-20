@@ -1,6 +1,8 @@
 {
     "name": "@bythope/root",
-    "scripts": {},
+    "scripts": {
+        "dev:phaser": "concurrently 'npm run dev -w @bythope/utils' 'npm run dev -w @bythope/phaser-plus' 'npm run dev -w @bythope/demo-phaser'"
+    },
     "workspaces": [
         "./utils",
         "./cli",
@@ -32,6 +34,7 @@
         "concurrently": "^6.4.0",
         "eslint": "^8.4.1",
         "jest": "^27.4.5",
+        "node-sass": "^7.0.0",
         "nodemon": "^2.0.15",
         "parcel": "^2.0.1",
         "semver": "7.3.5",
