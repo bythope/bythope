@@ -12,7 +12,6 @@
     "scripts": {
         "dev": "nodemon -e js -w src --exec 'npm run build'",
         "build": "npm run build:src && npm run build:tsd",
-        "test": "echo 'run test scripts'",
         "build:tsd": "tsc -d --allowJs --types @rivalis/utils --emitDeclarationOnly --target es5 --lib ES2015 --outDir ./lib src/*.js",
         "build:src": "babel --config-file ./.babelrc src --out-dir lib"
     },
