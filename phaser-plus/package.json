@@ -1,6 +1,6 @@
 {
     "name": "@bythope/phaser-plus",
-    "version": "1.0.32",
+    "version": "1.1.35",
     "description": "Phaser 3 extension",
     "types": "lib/phaserplus.d.ts",
     "main": "lib/phaserplus.js",
@@ -8,7 +8,7 @@
     "scripts": {
         "dev": "nodemon -e js -w src --exec 'npm run build'",
         "build": "npm run build:src && npm run build:tsd && npm run build:scss",
-        "build:tsd": "tsc -d --allowJs --types @bythope/utils,phaser,semantic-ui-react --emitDeclarationOnly --target es5 --lib ES2015,DOM,ScriptHost --outDir ./lib src/*.js",
+        "build:tsd": "tsc -d --allowJs --types @bythope/utils,phaser --emitDeclarationOnly --target es5 --lib ES2015,DOM,ScriptHost --outDir ./lib src/*.js",
         "build:src": "babel --config-file ./.babelrc src --out-dir lib",
         "build:scss": "node-sass --output-style compressed style/index.scss lib/bundle.css"
     },
@@ -35,7 +35,8 @@
     },
     "dependencies": {
         "@bythope/utils": "^1.1.0",
-        "semantic-ui-react": "^2.0.4"
+        "bootstrap": "^5.1.3",
+        "react-bootstrap": "^2.0.4"
     },
     "peerDependencies": {
         "phaser": "3.x"

@@ -5,16 +5,15 @@ import ModuleUI from './core/ModuleUI'
 import ModuleRegister from './core/ModuleRegister'
 import ServiceRegister from './core/ServiceRegister'
 
-import * as UI from 'semantic-ui-react'
 import Button from './ui/Button'
 import Window from './ui/Window'
 import Section from './ui/Section'
 
 /** @namespace UI */
-const BasicUI = {
+const UI = {
     Button,
     Window,
     Section
 }
 
-export { Scene, Service, Module, ModuleUI, ModuleRegister, ServiceRegister, UI, BasicUI }
+export { Scene, Service, Module, ModuleUI, ModuleRegister, ServiceRegister, UI }

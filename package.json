@@ -1,13 +1,16 @@
 {
     "name": "@bythope/root",
     "scripts": {
-        "dev:phaser": "concurrently 'npm run dev -w @bythope/utils' 'npm run dev -w @bythope/phaser-plus' 'npm run dev -w @bythope/demo-phaser'"
+        "dev": "concurrently 'npm run dev:*'",
+        "dev:utils": "npm run dev -w @bythope/utils",
+        "dev:phaser-plus": "npm run dev -w @bythope/phaser-plus",
+        "dev:phaser-plus-demo": "npm run dev -w @bythope/phaser-plus-demo"
     },
     "workspaces": [
         "./utils",
         "./cli",
         "./phaser-plus",
-        "./demo-phaser"
+        "./phaser-plus-demo"
     ],
     "repository": {
         "type": "git",
@@ -29,14 +32,16 @@
         "@babel/plugin-proposal-class-properties": "^7.16.5",
         "@babel/preset-env": "^7.16.5",
         "@babel/preset-react": "^7.16.5",
+        "autoprefixer": "^10.4.1",
         "chai": "^4.3.4",
         "commander": "8.3.0",
         "concurrently": "^6.4.0",
         "eslint": "^8.4.1",
-        "jest": "^27.4.5",
         "node-sass": "^7.0.0",
         "nodemon": "^2.0.15",
         "parcel": "^2.0.1",
+        "postcss": "^8.4.5",
+        "react-scripts": "5.0.0",
         "semver": "7.3.5",
         "typescript": "^4.5.4"
     }
