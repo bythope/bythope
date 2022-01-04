@@ -1,7 +1,38 @@
+import Color, { toHex } from '../Color'
 import React from 'react'
 
-const Button = ({ onClick, type = 'prime', label = '[YOUR TEXT HERE]', dynamic = false }) => (
-    <div onClick={onClick} className={`basicui btn btn-${type}${dynamic ? ' dynamic' : ''}`}>{label}</div>
-)
+/**
+ * @typedef ButtonOptions
+ * @property {Function} onClick
+ * @property {('prime'|'cool'|'basic')} type
+ * @property {import('../Color').ColorType} color
+ * @property {string} label
+ * @property {boolean} dynamic 
+ */
+
+
+/**
+ * 
+ * @param {ButtonOptions} param0
+ */
+const Button = ({ onClick, type = 'prime', color = 'black', label = '[YOUR TEXT HERE]', dynamic = false }) => {
+    
+    if (!(type === 'prime' || type === 'cool' || type === 'basic')) {
+        type = 'basic'
+    }
+
+    const style = {}
+
+    if (type === 'basic') {
+        style.background = toHex(color)
+    }
+
+    return (
+        <div onClick={onClick} style={style} className={`ui btn btn-${type}${dynamic ? ' dynamic' : ''}`}>
+            {label}
+        </div>
+    )
+
+}
 
 export default Button

@@ -1,4 +1,4 @@
-.basicui.section {
+.ui.section {
     position: absolute;
     opacity: 1;
     min-width: 10px;
@@ -6,11 +6,11 @@
     pointer-events: none;
 }
 
-.basicui.section.debug {
+.ui.section.debug {
     background: rgba(239, 83, 80, 0.6)
 }
 
-.basicui.section.dimmer {
+.ui.section.dimmer {
     backdrop-filter: blur(8px);
     background: rgba(0, 0, 0, 0.2);
 }

@@ -1,12 +1,12 @@
 {
     "name": "@bythope/phaser-plus",
-    "version": "1.1.35",
+    "version": "1.3.35",
     "description": "Phaser 3 extension",
     "types": "lib/phaserplus.d.ts",
     "main": "lib/phaserplus.js",
     "homepage": "https://bythope.com/",
     "scripts": {
-        "dev": "nodemon -e js -w src --exec 'npm run build'",
+        "dev": "nodemon -e js,scss -w src -w style --exec 'npm run build'",
         "build": "npm run build:src && npm run build:tsd && npm run build:scss",
         "build:tsd": "tsc -d --allowJs --types @bythope/utils,phaser --emitDeclarationOnly --target es5 --lib ES2015,DOM,ScriptHost --outDir ./lib src/*.js",
         "build:src": "babel --config-file ./.babelrc src --out-dir lib",

@@ -6,7 +6,7 @@ const Section = ({ children, visible = true, offsetX = 0, offsetY = 0, width = 0
         left: offsetX,
         width: width,
         height: height
-     }} className={`basicui section${debug ? ' debug' : ''}${dimmer ? ' dimmer' : ''}${visible ? '' : ' hidden'}`}>
+     }} className={`ui section${debug ? ' debug' : ''}${dimmer ? ' dimmer' : ''}${visible ? '' : ' hidden'}`}>
         {children}
     </div>
 )

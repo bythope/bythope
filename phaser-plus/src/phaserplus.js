@@ -1,3 +1,5 @@
+import Color from './Color'
+
 import Scene from './core/Scene'
 import Service from './core/Service'
 import Module from './core/Module'
@@ -8,12 +10,14 @@ import ServiceRegister from './core/ServiceRegister'
 import Button from './ui/Button'
 import Window from './ui/Window'
 import Section from './ui/Section'
+import LobbyUser from './ui/LobbyUser'
+
 
 /** @namespace UI */
 const UI = {
     Button,
     Window,
-    Section
+    Section,
+    LobbyUser
 }
-
-export { Scene, Service, Module, ModuleUI, ModuleRegister, ServiceRegister, UI }
+export { Color, Scene, Service, Module, ModuleUI, ModuleRegister, ServiceRegister, UI }

@@ -1,6 +1,6 @@
 // Your variable overrides
 $body-bg: #000;
-$body-color: #111;
+$body-color: #fff;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import './normalize';
@@ -8,3 +8,6 @@ $body-color: #111;
 @import './ui/buttons';
 @import './ui/window';
 @import './ui/section';
+@import './ui/lobby_user';
+
+@import './components/lobby';
